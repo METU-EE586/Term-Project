@@ -1,14 +1,19 @@
+% This file illustrates how to produce a Probabilistic Occupacy map by using 'produce_POM'
+% function.
 clc;
 clear;
 close all;
 
-numOfMeasurements = 5000;
-numTestPoints = 2500;
+% Parameters
+mapFile = 'mazeWithThickWalls.png';
+numOfMeasurements = 2000;
+numTestPoints = 1600; % Set the value as X^2
 
-[ xTestMatrix, yTestMatrix, probOccupancyMatrix ] = produce_POM('ellipseAndDiamond.png'...
-    ,numOfMeasurements, numTestPoints );
+% Call produce_POM
+[ xTestMatrix, yTestMatrix, probOccupancyMatrix ] = produce_POM(mapFile, numOfMeasurements...
+    , numTestPoints);
 
-%% Plot results
+% Plot results
 figure;
 hold on; grid on;
 s = surf(xTestMatrix, yTestMatrix, probOccupancyMatrix, 'FaceAlpha', 0.7);

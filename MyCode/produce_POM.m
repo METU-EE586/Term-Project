@@ -16,6 +16,7 @@ meanGP = 0;
 sigmaPriorGP = 0.5;
 scaledLengthGP = 1;
 stdMeas = 0.2;
+thresholdOccupancy = 0;
 
 %% Convert the image to map
 image = imread(fullfile(originalMapFile)); % Load the image
@@ -85,10 +86,9 @@ yLimits = map.YWorldLimits;
 
 %% Calculate Probabilistic Occupancy Grid
 ... Regarding estimates produced by the GP decide 
-threshold = 0;
 % Find the probability of being smaller than the threshold for each point considering the mean
 % and the covariance of the estimate
-probFreeArray = normcdf(threshold * ones(numTestPoints,1), estimateArray, sqrt(diag(covEstimate)));
+probFreeArray = normcdf(thresholdOccupancy * ones(numTestPoints,1), estimateArray, sqrt(diag(covEstimate)));
 probOccupancyArray = 1 - probFreeArray;
 
 % Put the results in matrix form
