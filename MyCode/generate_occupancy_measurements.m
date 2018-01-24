@@ -30,5 +30,13 @@ measArray = zeros(numOfMeasurements, 1);
 measArray(occupArray) = 1;
 measArray(~occupArray) = -1;
 
+% Below section plots original and noisy samples to previosly plotted map
+% hold on;
+% plot(realXCoorArray(measArray==-1), realYCoorArray(measArray==-1), 'rX');
+% plot(realXCoorArray(measArray==1), realYCoorArray(measArray==1), 'bX');
+% 
+% scatter(xArray(measArray==-1), yArray(measArray==-1), 10,...
+%     'MarkerEdgeColor','r', 'MarkerFaceColor', 'r');
+% scatter(xArray(measArray==1), yArray(measArray==1), 10,...
+%     'MarkerEdgeColor','b', 'MarkerFaceColor', 'b');
 end
-

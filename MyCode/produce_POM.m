@@ -14,7 +14,7 @@ gridPerMeter = 10; % It sets the resolution in the occupancy map. There will be 
                                 ...of distinct edges per meter
 meanGP = 0;
 sigmaPriorGP = 0.5;
-scaledLengthGP = 1;
+scaledLengthGP = 2;
 stdMeas = 0.2;
 thresholdOccupancy = 0;
 
